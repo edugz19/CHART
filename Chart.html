@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <title>Gráfico Kg aceituna</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.js"></script>
+    </head>
+    <body>
+        <div class="chart-container" style="position: relative; height:40vh; width:80vw">
+            <canvas id="myChart"></canvas>
+        </div>
+        <script>
+            var ctx = document.getElementById('myChart').getContext('2d');
+            var myChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['16 de febrero', '17 de febrero', '18 de febrero', '19 de febrero', '20 de febrero', '21 de febrero', '22 de febrero', '23 de febrero', '24 de febrero', '25 de febrero'],
+                    datasets: [{
+                        label: 'Kg de Aceituna en los últimos 10 días',
+                        data: [870,1321,1000,781,793,1292,1221,1100,1045,1500],
+                        fill: true,
+                        backgroundColor: [
+                            'blue',
+                            'red',
+                            'green',
+                            'yellow',
+                            'purple',
+                            'blue',
+                            'red',
+                            'green',
+                            'yellow',
+                            'purple'
+                        ],
+                        borderColor: 'green',
+                        borderWidth: 4,
+                        pointRadius: 4
+                    }]
+                },
+                options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    }
+                }
+            });
+        </script>
+    </body>
+</html>
